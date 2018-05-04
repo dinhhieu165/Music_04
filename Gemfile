@@ -20,6 +20,7 @@ gem "jquery-rails", "~> 4.3", ">= 4.3.1"
 gem "bootstrap-sass", "~> 3.3.7"
 gem "kaminari"
 gem "font-awesome-rails"
+gem "paperclip"
 
 group :development, :test do
   gem "rubocop", require: false

@@ -1,4 +1,11 @@
+//= require clndr
+//= require custom
+//= require jquery.vmap
+//= require moment-2.2.1
+//= require rickshaw
+//= require site
+//= require underscore-min
+//= require metisMenu.min
 //= require rails-ujs
 //= require jquery
-//= require bootstrap-sprockets
 //= require_tree .

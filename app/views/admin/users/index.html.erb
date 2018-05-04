@@ -1,0 +1,30 @@
+<div class="container-fluid">
+ <div class="row">
+  <h3 class="sub-header"><%= t("admin.users.user_list")%></h3>
+    <%= form_tag(admin_users_path, method: :get) do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag t("admin.albums.search"), name: nil %>
+    <% end %><br/>
+    <%= link_to new_admin_user_path do %>
+      <span><i class="fa fa-plus fa-2px"></i><%= t("admin.users.new_user")%></span>
+    <% end %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th><%= t("admin.albums.name")%></th>
+            <th><%= t("admin.users.email")%></th>
+            <th><%= t("admin.albums.created_at")%></th>
+            <th><%= t("admin.users.activated_at")%></th>
+            <th><%= t("admin.albums.delete")%></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "user", collection: @users %>
+        </tbody>
+      </table>
+      <%= paginate @users %>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,12 @@
 vi:
   layouts:
     title: "Music"
+    categories: "Thể loại"
+    signup: "Đăng ký"
+    login: "Đăng nhập"
+    logout: "Đăng xuất"
+  admin:
+    flash:
+      successful: "%{obj} thành công %{action}"
+      failed: "%{obj} thất bại %{action}"
+      error: "Không thể tìm %{obj} nào với id: %{id}"
