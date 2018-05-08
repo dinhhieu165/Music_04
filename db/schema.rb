@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503153921) do
+ActiveRecord::Schema.define(version: 20180508064758) do
 
   create_table "albums", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -39,13 +39,20 @@ ActiveRecord::Schema.define(version: 20180503153921) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.bigint "user_id"
+  create_table "favorite_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "favorite_id"
     t.bigint "song_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["song_id"], name: "index_favorites_on_song_id"
+    t.index ["favorite_id"], name: "index_favorite_songs_on_favorite_id"
+    t.index ["song_id"], name: "index_favorite_songs_on_song_id"
+  end
+
+  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
@@ -90,7 +97,8 @@ ActiveRecord::Schema.define(version: 20180503153921) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "favorites", "songs"
+  add_foreign_key "favorite_songs", "favorites"
+  add_foreign_key "favorite_songs", "songs"
   add_foreign_key "favorites", "users"
   add_foreign_key "lyrics", "songs"
   add_foreign_key "lyrics", "users"
