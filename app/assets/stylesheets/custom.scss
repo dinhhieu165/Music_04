@@ -1,0 +1,19 @@
+@import 'colors';
+
+#container {
+  margin-top:52px
+}
+
+.w3-light-grey {
+  height: 100%;
+  background-color: $gray-lighter;
+  a {
+    color: $gray-darker;
+    margin: 0 3rem;
+  }
+}
+
+.left-bar li {
+  text-indent: 20px;
+  line-height: 40px;
+}
