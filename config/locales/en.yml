@@ -5,3 +5,6 @@ en:
     signup: "Sign up"
     login: "Log in"
     logout: "Log out"
+  categories:
+    index:
+      header: "All categories"
