@@ -1,3 +1,5 @@
 class SitePagesController < ApplicationController
-  def index; end
+  def index
+    @categories = Category.load_all
+  end
 end
