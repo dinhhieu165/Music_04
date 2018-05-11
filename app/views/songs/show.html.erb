@@ -1,0 +1,26 @@
+<div class="slide">
+  <div class="thumb">
+    <%= image_tag @song.image.url(:thumb) %>
+  </div>
+  <div class="title">
+    <h3><span><%= @song.name %></span><small><%= @song.album.artist.name %></small></h3>
+    <i class="zmdi zmdi-favorite-outline"></i>
+  </div>
+</div>
+<div class="player">
+  <div class="controls">
+    <i class="zmdi zmdi-shuffle"></i>
+    <i class="zmdi zmdi-fast-rewind"></i>
+    <div class="playbtn"><span></span></div>
+    <i class="zmdi zmdi-fast-forward"></i>
+    <i class="zmdi zmdi-replay"></i>
+  </div>
+  <div class="track">
+  <%= audio_tag(@song.audio.url, autoplay: true, preload: true, crossorigin: "anonymous") %>
+    <canvas class="analyser"></canvas>
+    <div class="progress">
+      <div class="bar"></div>
+    </div>
+    <div class="counter"><span class="begin">0:00</span><span class="end">0:00</span></div>
+  </div>
+</div>

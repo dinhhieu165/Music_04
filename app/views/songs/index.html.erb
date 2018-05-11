@@ -1,0 +1,10 @@
+<div class="list">
+  <header>
+    <div><i class="zmdi zmdi-arrow-left"></i></div>
+    <h3><%= t "songs.index.title" %></h3>
+    <div><i class="zmdi zmdi-more-vert"></i></div>
+  </header>
+  <section>
+    <%= render partial: "song", collection: @songs%>
+  </section>
+</div>

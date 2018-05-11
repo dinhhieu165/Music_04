@@ -8,3 +8,6 @@ en:
   categories:
     index:
       header: "All categories"
+  songs:
+    index:
+      title: "List Musics"
