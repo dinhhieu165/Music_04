@@ -1,8 +1,8 @@
 <div class="col-md-2 w3-light-grey">
-<h2><%= t "layouts.categories" %></h2>
+<h2><%= t "views.layouts.categories" %></h2>
     <% @categories.each do |category| %>
       <h4 class="">
-        <%= link_to category.title, category_path %>
+        <%= link_to category.title, category_path(category) %>
       </h4>
     <% end %>
 </div>

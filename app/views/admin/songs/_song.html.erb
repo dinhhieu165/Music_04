@@ -1,0 +1,17 @@
+<tr>
+  <td><%= song.id %></td>
+  <td><%= song.name %></td>
+  <td><%= song.album.name %></td>
+  <th><%= song.category.title %></th>
+  <td><%= song.created_at %></td>
+  <td>
+    <%= link_to edit_admin_song_path(song) do %>
+      <span><i class="fa fa-edit fa-1px"></i></span>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to admin_songs_path(song), method: :delete, data: {confirm: "Are you sure?"} do %>
+      <span><i class="fa fa-times fa-1px"></i></span>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <%= link_to favorite_path(favorite) do %>
+      <%= favorite.name %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to favorite_list_path(favorite_list), method: :delete do %>
+      <span><i class="fa fa-times fa-1px"></i></span>
+    <% end %>
+  </td>
+</tr>

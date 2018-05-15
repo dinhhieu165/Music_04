@@ -1,0 +1,46 @@
+<div class="shoes-grid">
+  <div class="artist-header">
+    <div class="artist-cover-image">
+      <div class="row">
+        <div class="col-md-8">
+          <h3><%= @artist.name %></h3>
+          <p>
+            <%= raw truncate(@artist.describe, length: 150, separator: " ") %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-header">
+    <ul class="nav nav-tabs">
+      <li>
+        <a data-toggle="tab" href="#albums">
+          <%= t "views.artists.show.albums" %>
+        </a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#describe">
+          <%= t "views.artists.show.describe" %>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="tab-content">
+    <div id="albums" class="tab-pane fade">
+      <h3><%= t "views.artists.show.all_albums" %>:&nbsp<%= @artist.name %></h3>  
+      <div class= "album-collection row">
+        <%= render partial: "albums/album", collection: @albums %>
+      </div>
+      <div class="pagination-album">
+        <%= paginate @albums, remote: true, param_name: :albums %>
+      </div>
+    </div>
+    <div id="describe" class="tab-pane fade">
+      <h3><%= t "views.artists.show.describe" %>:&nbsp<%= @artist.name %></h3>  
+      <p><%= raw @artist.describe %></p>
+    </div>
+  </div>
+</div>
+<div class="clearfix"> </div>

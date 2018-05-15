@@ -1,0 +1,2 @@
+$(".song-collection").html("<%= j render partial: 'songs/song', collection: @songs %>");
+$(".pagination").html("<%= j paginate(@songs, remote: true) %>");

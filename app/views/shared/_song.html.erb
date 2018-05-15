@@ -1,0 +1,15 @@
+<li class= "fix-border song-<%= song.id %>">
+  <%= link_to songs_next_path(song_id: song.id), method: :post, remote: true do %>
+  <div class="row">
+    <div class="col-md-5">
+      <%= song.name %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to songs_path(id: song.id), method: :post,
+        class: "pull-right" do %>
+        <span><i class="fa fa-download fa-2px"></i></span>
+      <% end %>  
+    </div>
+  </div>
+  <% end %>
+</li>

@@ -1,0 +1,11 @@
+<h1>Music_03</h1>
+
+<p>Hi <%= @user.name %>,</p>
+
+<p>
+<%= t "views.user_mailer.account_activation.welcome" %>
+  <%= t "views.user_mailer.account_activation.click_link"%>
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>

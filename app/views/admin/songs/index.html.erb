@@ -1,0 +1,31 @@
+<div class="container-fluid">
+ <div class="row">
+  <h3 class="sub-header"><%= t "admin.songs.song_list" %></h3>
+    <%= form_tag(admin_songs_path, method: :get) do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag t("admin.albums.search"), name: nil %>
+    <% end %><br/>
+    <%= link_to new_admin_song_path do %>
+      <span><i class="fa fa-plus fa-2px"></i><%= t "admin.songs.new_song" %></span>
+    <% end %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th><%= t "admin.albums.name" %></th>
+            <th>Album</th>
+            <th><%= t "admin.songs.category" %></th>
+            <th><%= t "admin.albums.created_at" %></th>
+            <th><%= t "admin.albums.edit" %></th>
+            <th><%= t "admin.albums.delete" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "song", collection: @songs %>
+        </tbody>
+      </table>
+      <%= paginate @songs %>
+    </div>
+  </div>
+</div>

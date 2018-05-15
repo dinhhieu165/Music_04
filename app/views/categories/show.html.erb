@@ -1,1 +1,9 @@
-<%= render partial: "category", locals: {category: @category} %>
+<div class="shoes-grid">
+  <h2><%= @category.title %></h2>
+  <div class="row album-collection">
+    <%= render partial: "songs/song", collection: @songs %>
+  </div>
+  <div class="pagination">
+    <%= paginate @songs, remote: true %>
+  </div>
+</div>

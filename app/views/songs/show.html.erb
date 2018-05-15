@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-9">
+    <div>
+      <div class="card col-md-3">
+        <%= image_tag @song.image %>
+      </div>
+      <div class=" col-md-9">
+        <h3><%= @song.name %></h3>
+        <h5><%= @song.album.artist.name %> -<%= link_to @song.album.artist.name, artist_path(@song.album.artist) %></h5>
+        <h5><%= link_to @song.category.title, category_path(@song.category) %></h5>
+        <%= audio_tag @song.audio, autoplay: true, controls: true, class: "col-md-12" %>
+      </div>
+    </div>
+    <div class= "favorite-content">
+      <h4>
+        <span><i class="fa fa-heart fa-1px"></i></span>
+          &nbsp<%= t "songs.show.favorite_list" %>
+      </h4>
+      <ul class= "favorite-item">
+        <%= render partial: "favorites/favorite",
+          collection: @favorites %>
+      </ul>
+      <ul>
+        <%= form_for @favorite, remote: true do |f| %>
+          <%= f.hidden_field :song_id, value: @song.id %>
+          <%= f.label :name, t("songs.show.name") %>
+          <%= f.text_field :name %>
+          <%= f.submit t("songs.show.submit"), class: "btn btn-primary" %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-12">
+      <h4>Lyrics: </h4>
+      <p>.........</p>
+    </div>
+    <div class="col-md-12">
+      <h3>Comment:</h3>
+      <image src="https://78.media.tumblr.com/avatar_494258e2d611_30.pnj" class="img-rounded">Mr.AAAA:
+      <p>Hi, I'm Cesc Vilà, the composer of this track.<br>
+I just wanted to let you know how important is for me to read all your beautiful comments. To read that someone can feel more relax or empowered and even that this music can help you a little bit to endure your struggle with depression, is something that's beyond what a composer could ask for and makes me feel a sense of purpose and a strength to move on with my life too.<br>
+Sadly, sometimes we (myself) are knock out by many cirumcustancies..., and although we all know that eventually things will pass, it's really hard to move on. At such dark times it is good to cling to what life gives to us..., it may be an idea, a dream, a song..., or even a series of warm comments in a video on you tube (that's the case). Anything goes to keep going on, to return back to our light.<br>
+I just wanted to show you my gratitude and also encourage you all. Feel free to listen to my track Suns and Stars (Really Slow Motion). It's there on you tube. Not propaganda. I think that track really can help you also to feel empowered, uplifted and happy..., even if just makes you smile or dream for a second, it will be worthwhile :)
+Thanks also to HDSounDI for sharing my work.<br>
+See you soon ^_^﻿</p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <h3>Maybe you are interested</h3>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+</div>

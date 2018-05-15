@@ -1,0 +1,10 @@
+<div class="container-fluid">
+    <h3><%= t "password_resets.new.reset_password" %></h3>
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+      <div>
+        <span><%= t "password_resets.new.email_address" %><label>*</label></span>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+      <%= f.submit t("password_resets.new.submit"), class: "btn btn-primary" %>
+    <% end %>
+</div>

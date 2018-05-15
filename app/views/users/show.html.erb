@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <% provide(:title, @user.name) %>
+  <div class="row">
+    <aside class="col-md-6">
+      <section class="user_info">
+        <h1>
+          <%= gravatar_for @user %>
+          <%= @user.name %>
+        </h1>
+      </section>
+    </aside>
+  </div>
+  <div class="clearfix"></div>
+  <h3><%= t "users.show.favorite_list" %></h3>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t "users.show.name" %></th>
+          <th><%= t "users.show.delete" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "users/favorite", collection: @favorites %>
+      </tbody>
+    </table>
+    <%= paginate @favorites %>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<%= form_for [:admin, @song] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+    <div class="field">
+      <%= f.label :name, t("admin.songs.name") %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :image, t("admin.songs.image") %>
+      <%= f.file_field :image, class: "form-control"%>
+    </div>
+    <div class="field">
+      <%= f.label :audio, t("admin.songs.audio") %>
+      <%= f.file_field :audio, class: "form-control"%>
+    </div>
+    <div class="field">
+      <%= f.label :category, t("admin.songs.category") %>
+      <%= f.select :category_id, Category.all.collect{|category| [category.title, category.id]}, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :album, t("admin.songs.album")  %>
+      <%= f.select :album_id, Album.all.collect{|album| [album.name, album.id]}, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.submit :Submit, class: "btn btn-primary" %>
+    </div>
+<% end %>

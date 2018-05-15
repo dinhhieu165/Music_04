@@ -1,0 +1,6 @@
+<%= form_for :lyric, url: "/lyrics", remote: :true do |f| %>
+  <%= f.hidden_field :song_id, value: @song.id %>
+  <%= f.label :content, t("views.songs.show.content") %>
+  <%= f.text_area :content, class: "form-control" %>
+  <%= f.submit t("views.songs.show.submit"), class: "btn btn-primary" %>
+<% end %>

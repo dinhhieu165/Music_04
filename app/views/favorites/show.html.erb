@@ -1,0 +1,98 @@
+<% if @song %>
+  <div class="shoes-grid">
+    <h3><%= t "views.favorite_lists.show.favorite_list" %>:&nbsp
+      <%= @favorite.name %></h3>
+    <div class="rating-section" data-fl-id= "<%= @favorite.id %>"
+      data-type= "<%= @favorite.class.name %>">
+    </div>
+    <div class="album-audio-player">
+      <%= render partial: "shared/audio_player", locals: {song: @song} %>
+    </div>
+    <div class="song-album">
+      <ul>
+        <%= render partial: "shared/song", collection: @favorite.songs %>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-md-2 pull-right">
+        <h3>
+          <span class="pull-left"><i class="fa fa-headphones fa-3px"></i></span>
+            &nbsp<%= @favorite.view %>
+        </h3>
+      </div>
+    </div>
+    <div class="lyric-section">
+      <% if @lyrics.present? %>
+        <div class="lyric-header">
+          <div class="row">
+          <div class="col-md-4">
+            <h4>
+              <%= t "views.songs.show.lyric" %>:&nbsp
+                <span class="song-name"><%= @song.name %></span>
+            </h4>
+          </div>
+          <div class="col-md-4">
+            <div class = "pull-right">
+              <%= t "views.songs.show.contribute" %>:
+              <span class="contribute">
+                <%= @lyric.user.name %>
+              </span>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class= "lyric-content">
+          <p><%= raw @lyric_item.content %></p>
+        </div>
+      <% else %>
+        <%= t "views.songs.show.dont_have_lyric" %>
+      <% end %>
+      <div class= "lyric-footer">
+        <a data-toggle="modal" data-target="#myModal1">
+          <i><%= t "views.songs.show.contribute_lyric" %></i>
+        </a>
+      </div>
+      <div class="modal fade" id="myModal1" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">
+                <%= t "views.songs.show.contribute_lyric" %>
+              </h4>
+            </div>
+            <div class="modal-body">
+              <%= render "shared/form_lyric" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="comment-section">
+      <div class="form-group well">
+        <%= form_for @comment, remote: true do |f| %>
+          <%= f.hidden_field :commentable_type, value: @favorite_list.class.name %>
+          <%= f.hidden_field :commentable_id, value: @favorite_list.id %>
+          <%= f.text_area :content, class: "form-control", 
+            placeholder: t("views.songs.show.comment_here") %>
+          <div class="submit-comment">
+            <%= f.submit t("views.songs.show.submit"), 
+              class: "btn btn-primary submit-comment-form" %>
+          </div>
+        <% end %>
+      </div>
+      <div class= "comment-content">
+        <%= render partial: "shared/comment", collection: @comments %>
+      </div>
+      <p class="pagination">
+        <%= link_to_next_page(@comments, "Next Page", :remote => true) %>
+      </p>
+    </div>
+  </div>
+<% else %>
+  <div class="shoes-grid">
+    <h3><%= t "views.favorite_lists.show.not_song" %></h3>
+  </div>
+  <div class="clearfix"> </div>
+<% end %>
+<div class="clearfix"> </div>    

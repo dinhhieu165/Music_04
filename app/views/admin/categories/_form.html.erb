@@ -1,0 +1,14 @@
+<%= form_for [:admin, @category] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+    <div class="field">
+      <%= f.label :title, t("admin.categories.title") %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :describe, t("admin.albums.describe") %>
+      <%= f.text_field :describe, class: "form-control"%>
+    </div>
+    <div class="field">
+      <%= f.submit :Submit, class: "btn btn-primary" %>
+    </div>
+<% end %>

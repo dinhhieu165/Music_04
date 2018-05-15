@@ -1,0 +1,13 @@
+<div class="audio-player" data-id= "<%= song.id %>">
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag song.image %>
+    </div>
+    <div class="col-md-8">
+      <div class="example1">
+        <h3><%= song.name %></h3>
+      </div>
+    </div>
+  </div>
+  <%= audio_tag song.audio, autoplay: true, controls: true, class: "audio-song" %>
+</div>

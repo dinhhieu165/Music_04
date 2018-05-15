@@ -1,0 +1,15 @@
+<tr>
+  <td><%= artist.id %></td>
+  <td><%= artist.name %></td>
+  <td><%= artist.created_at %></td>
+  <td>
+    <%= link_to edit_admin_artist_path(artist) do %>
+      <span><i class="fa fa-edit fa-1px"></i></span>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to admin_artist_path(artist), method: :delete, data: {confirm: "Are you sure? You will delete all album of this artist!!danger"} do %>
+      <span><i class="fa fa-times fa-1px"></i></span>
+    <% end %>
+  </td>
+</tr>

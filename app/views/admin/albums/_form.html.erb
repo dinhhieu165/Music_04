@@ -1,0 +1,18 @@
+<%= form_for [:admin, @album] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+    <div class="field">
+      <%= f.label :name, t("admin.albums.name") %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :describe, t("admin.albums.describe") %>
+      <%= f.text_field :describe, class: "form-control"%>
+    </div>
+    <div class="field">
+      <%= f.label :artist, t("admin.albums.artist") %>
+      <%= f.select :artist_id, Artist.all.collect{|artist| [artist.name, artist.id]}, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.submit :Submit, class: "btn btn-primary" %>
+    </div>
+<% end %>

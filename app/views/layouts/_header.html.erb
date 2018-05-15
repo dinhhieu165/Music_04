@@ -49,16 +49,16 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <% if false %>
+          <% if logged_in? %>
             <li class="nav-item">
               <%= link_to (t "layouts.logout"), logout_path, method: :delete, class: "nav-link" %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to (t "layouts.login"), "/", class: "nav-link" %>
+              <%= link_to t("views.layouts.login"), login_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to (t "layouts.signup"), "/", class: "nav-link" %>
+              <%= link_to t("views.layouts.signup"), signup_path, class: "nav-link" %>
             </li>
           <% end %>
         </ul>

@@ -1,0 +1,93 @@
+<div class="shoes-grid">
+  <h3><%= t"views.songs.show.album" %>:&nbsp<%= @album.name %> - 
+  <%= link_to @album.artist.name, artist_path(@album.artist) %></h3>
+  <div class="album-audio-player">
+    <%= render partial: "shared/audio_player", locals: {song: @song} %>
+  </div>
+  <div class="song-album">
+    <ul>
+      <%= render partial: "shared/song", collection: @album.songs %>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h5>
+        <%= t "views.songs.show.artist" %>:&nbsp<b>
+            <%= link_to @album.artist.name, artist_path(@album.artist) %></b>
+      </h5>
+    </div>
+    <div class="col-md-4">
+      <h3>
+        <span class="pull-right favorite-plus"><i class="fa fa-plus fa-3px"></i>
+          <%= t "views.songs.show.add_favorite" %>
+        </span>
+      </h3>
+    </div>
+  </div>
+  <div class= "favorite-content">
+    <h4>
+      <span><i class="fa fa-heart fa-1px"></i></span>
+        &nbsp<%= t "views.songs.show.favorite_list" %>
+    </h4>
+    <ul class= "favorite-item">
+      <%= render partial: "favorites/favorite",
+        collection: @favorites %>
+    </ul>
+    <ul>
+      <%= form_for @favorite, remote: true do |f| %>
+        <%= f.hidden_field :song_id, value: @song.id %>
+        <%= f.label :name, t("views.songs.show.name") %>
+        <%= f.text_field :name %>
+        <%= f.submit t("views.songs.show.submit"), class: "btn btn-primary" %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="lyric-section">
+    <% if @lyrics.present? %>
+      <div class="lyric-header">
+        <div class="row">
+        <div class="col-md-4">
+          <h4>
+            <%= t "views.songs.show.lyric" %>:&nbsp
+              <span class="song-name"><%= @song.name %></span>
+          </h4>
+        </div>
+        <div class="col-md-4">
+          <div class = "pull-right">
+            <%= t "views.songs.show.contribute" %>:
+            <span class="contribute">
+              <%= @lyric.user.name %>
+            </span>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class= "lyric-content">
+        <p><%= raw @lyric.content %></p>
+      </div>
+    <% else %>
+      <%= t "views.songs.show.dont_have_lyric" %>
+    <% end %>
+    <div class= "lyric-footer">
+      <a data-toggle="modal" data-target="#myModal1">
+        <i><%= t "views.songs.show.contribute_lyric" %></i>
+      </a>
+    </div>
+    <div class="modal fade" id="myModal1" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">
+              <%= t "views.songs.show.contribute_lyric" %>
+            </h4>
+          </div>
+          <div class="modal-body">
+            <%= render "shared/form_lyric" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

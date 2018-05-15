@@ -1,0 +1,28 @@
+<div class= "fl-<%= favorite.id %> fix-layouts-fl">
+  <li class= "favorite_list">
+    <div class="row">
+      <div class="col-md-10">
+        <%= link_to favorite_path(favorite) do %>
+          <%= favorite.name %>
+        <% end %>
+      </div>
+      <div class="col-md-2 pull-right">
+        <% if favorite.songs.include?(@song) %>
+          <%= link_to favorite_song_path(favorite.favorite_songs.find_by(song_id: @song.id)),
+            method: :delete, remote: true do %>
+            <div class="btn btn-danger">
+              <%= t "favorite_lists.favorite.sub" %>
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to favorite_songs_path(favorite_id: favorite.id, 
+            song_id: @song.id), method: :post, remote: true do %>
+            <div class="btn btn-primary">
+              <%= t "favorite_lists.favorite.add" %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </li>
+</div>

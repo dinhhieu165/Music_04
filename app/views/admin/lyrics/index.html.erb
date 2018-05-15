@@ -1,0 +1,32 @@
+<div class="container-fluid">
+ <div class="row">
+  <h3 class="sub-header"><%= t "admin.lyrics.lyric_list" %></h3>
+    <%= form_tag(admin_lyrics_path, method: :get) do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag t("admin.albums.search"), name: nil %>
+    <% end %><br/>
+    <%= link_to new_admin_lyric_path do %>
+      <span><i class="fa fa-plus fa-2px"></i><%= t "admin.lyrics.new_lyric" %></span>
+    <% end %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th><%= t "admin.lyrics.content" %></th>
+            <th><%= t "admin.lyrics.author" %></th>
+            <th><%= t "admin.lyrics.song" %></th>
+            <th><%= t "admin.lyrics.accepted" %></th>
+            <th><%= t "admin.albums.created_at" %></th>
+            <th><%= t "admin.albums.edit" %></th>
+            <th><%= t "admin.albums.delete" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "lyric", collection: @lyrics %>
+        </tbody>
+      </table>
+      <%= paginate @lyrics %>
+    </div>
+  </div>
+</div>

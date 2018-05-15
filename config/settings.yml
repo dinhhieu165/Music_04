@@ -1,0 +1,4 @@
+show_limit:
+  per_page: 10
+song:
+  style: "100*100"

@@ -1,0 +1,44 @@
+<div class="shoes-grid">
+  <div class="new-song-slider">
+    <h3><%= t "views.pages.home.new_songs" %></h3>
+    <div class="row">
+  		<div class="col-md-12">
+        <div id="Carousel" class="carousel slide">
+          <ol class="carousel-indicators">
+            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#Carousel" data-slide-to="1"></li>
+            <li data-target="#Carousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="row">
+                <%= render partial: "songs/song", collection: @songs[0..3] %>
+              </div>
+            </div>
+            <div class="item">
+            	<div class="row">
+                <%= render partial: "songs/song", collection: @songs[4..7] %>
+            	</div>
+            </div>
+            <div class="item">
+            	<div class="row">
+                <%= render partial: "songs/song", collection: @songs[8..11] %>
+            	</div>
+            </div><!--.item-->
+          </div><!--.carousel-inner-->
+          <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+          <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+        </div><!--.Carousel-->
+		  </div>
+	  </div>
+  </div>
+  <div class= "hot-album">
+    <h3><%= t "views.pages.home.hot_albums" %></h3>
+    <div class="row">
+      <%= render partial: "albums/album", collection: @albums %>
+    </div>
+  </div>
+</div>
+
+
+<div class="clearfix"> </div>

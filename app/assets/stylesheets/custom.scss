@@ -1,4 +1,7 @@
-@import 'colors';
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'color';
 
 #container {
   margin-top:52px
@@ -24,4 +27,80 @@
   font-size: 18px;
   margin-top: 42px;
   width: 49%;
+}
+
+.user-info {
+  padding: 5px 10px;
+}
+
+.favorite_list {
+  border: 2px solid $gray-light;
+  border-top: none;
+  padding: 5px;
+}
+.favorite-item {
+  overflow-y: scroll;
+  width: 840px;
+  height: 200px;
+  margin: 10px;
+}
+
+.shoes-grid {
+  height: auto;  
+}
+
+.fix-height {
+  display: block;
+  height: 250px;
+}
+
+.artist-cover-image {
+  border: 1px solid $gray;
+  margin: 25px 5px 0px;
+  padding: 10px;
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+.tab-header{
+  margin-top: 10px;
+  .nav-tabs > li.active > a {
+    color: $purple !important;
+  }
+}
+
+.song-album {
+  overflow-y: scroll;
+  width: 840px;
+  height: 200px;
+  margin: 10px;
+  background-color: $gray;
+}
+
+.fix-border {
+  border: 2px solid $gray-light;
+  border-top: none;
+  padding: 15px;
+}
+
+.fix-border:first-child{
+  border-top: 2px solid $gray-light;
+}
+
+.fix-border a:hover {
+  color: $purple !important;
+  cursor: pointer;
+}
+
+.song-is-chose a {
+  color: $purple !important;
+}
+
+.album-item {
+  padding-bottom: 15px;
+  img {
+    width: 200px;
+    height: 200px;
+  }
 }

@@ -1,0 +1,13 @@
+<div class="col-md-3 album-item">
+  <h4>
+    <%= link_to album_path(album) do %>
+      <%= album.name %>
+    <% end %>
+  </h4>
+  <h5>
+    <%= t "views.categories.album.artist" %>&nbsp
+    <%= link_to artist_path(album.artist) do %>
+      <%= album.artist.name %>
+    <% end %>
+  </h5>
+</div>

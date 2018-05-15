@@ -1,10 +1,204 @@
 en:
-  layouts:
-    title: "Music"
-    categories: "Categories"
-    signup: "Sign up"
-    login: "Log in"
-    logout: "Log out"
+  views:
+    layouts:
+      title: "IMusic"
+      categories: "Categories"
+      signup: "Sign up"
+      login: "Log in"
+      logout: "Log out"
   categories:
     index:
       header: "All categories"
+  admin:
+    flash:
+      successful: "%{obj} successfully %{action}"
+      failed: "%{obj} failed %{action}"
+      error: "Can't find any %{obj} with id: %{id}"
+    albums:
+      name: "Name"
+      describe: "Describe"
+      artist: "Artist"
+      edit_title: "Edit album"
+      edit_submit: "Save change"
+      album_list: "Albums list"
+      search: "Search"
+      new_album: "  New album"
+      created_at: "Created at"
+      edit: "Edit"
+      delete: "Delete"
+      create: "Create"
+      update: "Update album"
+    artists:
+      name: "Name"
+      describe: "Describe"
+      edit_title: "Edit artist"
+      edit_submit: "Save change"
+      artist_list: "Artist list"
+      new_artist: "  New artist"
+      update: "Update artist"
+    categories:
+      title: "Title"
+      edit_title: "Edit category"
+      category_list: "Category List"
+      new_category: "New Category"
+      update: "Update category"
+    songs:
+      name: "Name"
+      image: "Image"
+      audio: "Audio"
+      category: "Category"
+      album: "Album"
+      edit_title: "Edit song"
+      edit_submit: "Save change"
+      update: "Update Song"
+      song_list: "Song List"
+      new_song: "New song"
+    users:
+      user_list: "User List"
+      email: "Email"
+      activated_at: "Activated at"
+      new_user: "New User"
+    lyrics:
+      lyric_list: "Lyric List" 
+      new_lyric: "New Lyric"
+      author: "Author"
+      song: "Song name" 
+      accepted: "Accepted"
+    layouts: 
+      title: "IMusic Management"  
+  password_resets:
+    edit:
+      reset_password: "Reset password"
+      password: "Password"
+      confirmation: "Password Confirmation"
+      update_password: "Update password"
+    new:
+      reset_password: "Reset password"
+      email_address: "Email Address"
+      submit: "Submit"
+  sessions:
+    new:
+      register: "REGISTERED CUSTOMERS"
+      forgot_password: "Forgot Your Password?"
+      remember_me: "Remember me on this computer"
+      login_via_facebook: "Login via facebook"
+      login: "Log in"
+      have_account: "If you have an account with us, please log in."
+      new_account: "Create an Account"
+  user_mailer:
+    account_activation:
+      hi: "Hi"
+      welcome: "Welcome to the Music_03!."
+      click_link: "Click on the link below to activate your account:"
+    password_reset:
+      reset_password: "Reset Password"
+      link_reset: "To reset your password click the link below:"
+      exipire_time: "This link will expire in two hours."
+      did_not_request: "If you did not request your password to be reset"
+      ignore_email: "please ignore this email and your password will stay as it is."
+  users:
+    form:
+      personal_info: "PERSONAL INFORMATION"
+      name: "User Name"
+      email: "Email Address"
+      login_information: "LOGIN INFORMATION"
+      password: "Password"
+      confirmation: "Confirm Password"
+      submit: "Submit"
+    user:
+      your_sure: "You sure?"
+    edit:
+      edit_user: "Edit user"
+      save_change: "Save changes"
+      update_profile: "Update your profile"
+      change: "Change"
+    show:
+      favorite_list: "Favorite List"
+      name: "Name"
+      delete: "Delete"
+  albums:
+    show:
+      recommend: "GỢI Ý ALBUM"
+  layouts:
+    left_menu:
+      categories: "Music Genre"
+      pop: "Pop"
+      rock: "Rock"
+      balass: "Ballass"
+      rock2: "Rock & Roll"
+      rap: "Rap"
+      latin: "Latin"
+    header:
+      acc: "YOUR ACCOUNT"
+      signup: "Sign Up"
+      login: "Login"
+      profile: "Profile"
+      logout: "Logout"
+      search: "Search"
+      content_search: "Enter search term..."
+    footer:
+      mp3: "MP3 Player"
+      follow: "Follow Us"
+      language: "Language"
+      english: "English"
+      vietnamese: "Vietnamese"
+      lisence: "Lisence social number 314/GP-BTTTT"
+  songs:
+    show:
+      artist: "Artist"
+      album: "Album"
+      category: "Category"
+      lysic: "Lysic for"
+      version: "version"
+      contribute: "Contribute by"
+      contribute_lyric: "Contribute Lyric"
+      content: "Content"
+      submit: "Submit"
+      close: "close"
+      dont_have_lyric: "This song don't have lyric. Please contribute if you interest!"
+      recommend: "Recommend"
+      autoplay: "Autoplay"
+      comment_here: "Comment Here"
+      favorite_list: "Favorite lists:"
+      rating: "Rating:"
+      please_login: "Please login to add favorite list"
+      name: "name of favorite list:"
+      submit: "Submit"
+      add_favorite: "Add To Favorite List"
+      song: "Song: "
+  shared:
+    error_messages:
+      form_contains: "The form contains"
+    comment:
+      ago: "ago"
+      your_sure: "Are you sure?"
+      edit: "Edit"
+  favorite_lists:
+    favorite:
+      add: "Add"
+      sub: "Remove"
+    show:
+      favorite_list: "Favorite List"
+      not_song: "Favorite List has no song, please select song in to list"
+      user: "User: "
+      recommend: "Recommend Favorite List"
+  categories:
+    album:
+      name: "Category Name: "
+      artist: "Artist Name: "
+  searchs:
+    search:
+      result: "Result"
+  artists:
+    show:
+      all_songs: "Songs of"
+      all_albums: "Albums of"
+      songs: "Songs"
+      album: "Album"
+      describe: "Decribe"
+      see_more: "See More"
+  pages:
+    home:
+      hot_songs: "Hot Songs"
+      hot_albums: "Hot albums"
+      new_songs: "New Song"    

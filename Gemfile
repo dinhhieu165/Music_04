@@ -8,6 +8,7 @@ end
 gem "rails", "~> 5.1.6"
 gem "mysql2"
 gem "config"
+gem "faker"
 gem "puma", "~> 3.7"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
@@ -20,6 +21,10 @@ gem "jquery-rails", "~> 4.3", ">= 4.3.1"
 gem "bootstrap-sass", "~> 3.3.7"
 gem "kaminari"
 gem "font-awesome-rails"
+gem "paperclip"
+gem "omniauth"
+gem "omniauth-twitter"
+gem "mini_magick", "4.7.0"
 
 group :development, :test do
   gem "rubocop", require: false
